@@ -17,11 +17,6 @@ const userRoute = require('./route/user');
 app.use('/excerise', exceriseRoute);
 app.use('/user', userRoute);
 
-
-
-
-
-
 // connection to mongo_db
 const url = process.env.ATLAS_URL;
 mongoose.connect(url, {useNewUrlParser:true})
@@ -29,10 +24,8 @@ mongoose.connect(url, {useNewUrlParser:true})
 const connection = mongoose.connection;
 connection.once("open", ()=>{
     console.log('mongodb database connection successfully established')
-})
-
-
+});
 
 app.listen(port, () => {
     console.log(`server is listening at port: ${port}`);
-})
+});

@@ -45,7 +45,7 @@ router.post('/update/:id', (req, res) => {
 //delete user
 
 router.delete('/:id', (req,res)=> {
-    user.findByIdAndDelete(req.param.id)
+    user.findByIdAndDelete(req.params.id)
     .then(res => res.json('user deleted'))
     .catch(error =>{console.error(error.message)})
 
