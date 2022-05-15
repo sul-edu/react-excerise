@@ -2,26 +2,29 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 
-const exceriseSchema = new Schema({
+const exceriseSchema = new Schema ({
     
-    username:{
+    title:{
         type: String, 
-        required: true },
+        required: true
+     },
     description: {
         type: String,
-         required: true },
+         required: true 
+        },
     duration:{
         type: Number, 
-        required: true },
+        required: true 
+    },
     date:{
         type:Date,
-         required: true}
+        default:Date.now
+        }
 
 },
 {timestamps:true}
 
 );
 
-const excerise = mongoose.model('excerise', exceriseSchema);
+module.exports =  mongoose.model('excerise', exceriseSchema);
 
-module.exports =  excerise;
